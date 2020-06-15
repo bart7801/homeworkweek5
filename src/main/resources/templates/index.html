@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body style="background-color: #aa8686">
+<header>
+    <p class="header-name">CITY WEATHER APP MADE BY BART</p>
+    </div>
+</header>
+<main>
+    <div>
+        <form th:width="200" th:action="@{/citySearch}" th:object="${search}" method="get">
+            <input th:field="*{cityName}" type="search" placeholder=" enter city name">
+            <button type="submit">Search City</button>
+        </form>
+        </nav>
+    </div>
+</main>
+<footer>
+    <section>
+        <div>
+            <div>
+                <a href="https://openweathermap.org/">
+                    <img th:width="150"
+                         src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png">
+                </a>
+            </div>
+            <div>
+                <p>2020 © Copyright - Bart Schauer</p>
+            </div>
+            <div>
+                <a href="https://github.com/bart7801/homeworkweek5">
+                    <img th:width="120"
+                         src="https://www.theindianwire.com/wp-content/uploads/2019/05/maxresdefault-2.jpg"></a>
+                </a>
+            </div>
+        </div>
+    </section>
+</footer>
+</body>
+</html>

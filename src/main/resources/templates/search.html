@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body style="background-color: #aa8686">
+<header>
+    <p class="header-name">CITY WEATHER APP MADE BY BART</p>
+    </div>
+</header>
+<main></main>
+<div>
+    <p th:text="'Weather for ' + ${city.getCityName()} + ', ' + ${city.getCountry()}"></p>
+    <td><img th:width="180" th:src="@{http://openweathermap.org/img/wn/__${city.getIcon()}__.png}"></td>
+    <span th:if="${city.getError() == 'error'}"> Error, go back and select other city! <a
+            th:href="@{/}"> Back </a></span><span
+        th:unless="${city.getError()  == 'error'}">
+
+        <tr>
+            <dt>City</dt><dd th:text="${city.getCityName()}"></dd>
+            <dt>Longitude</dt><dd th:text="${city.getLon()}+' °'"></dd>
+            <dt>Latitude</dt><dd th:text="${city.getLat()}+' °'"></dd>
+            <dt>Id</dt><dd th:text="${city.getId1()}"></dd>
+            <dt>Main</dt><dd th:text="${city.getMain()}"></dd>
+            <dt>Description</dt><dd th:text="${city.getDescription()}"></dd>
+            <dt>Base</dt><dd th:text="${city.getBase()}"></dd>
+            <dt>Temp</dt><dd th:text="${city.getTemp()}+' °C'"></dd>
+            <dt>Feels Like</dt><dd th:text="${city.getFeelsLike()}+' °C'"></dd>
+            <dt>Temp. min</dt><dd th:text="${city.getTempMin()}+' °C'"></dd>
+            <dt>Temp. max</dt><dd th:text="${city.getTempMax()}+' °C'"></dd>
+            <dt>Pressure</dt><dd th:text="${city.getPressure()}+' hPa'"></dd>
+            <dt>Humidity</dt><dd th:text="${city.getHumidity()}+' %'"></dd>
+            <dt>Visibility</dt><dd th:text="${city.getVisibility()}+' m'"></dd>
+            <dt>Wind speed</dt><dd th:text="${city.getSpeed()}+' m/s'"></dd>
+            <dt>Wind direction</dt><dd th:text="${city.getDeg()}+' °'"></dd>
+            <dt>Cloudy</dt><dd th:text="${city.getAll()}+' %'"></dd>
+            <dt>Dt</dt><dd th:text="${city.getDt()}"></dd>
+            <dt>Type</dt><dd th:text="${city.getType()}"></dd>
+            <dt>Id</dt><dd th:text="${city.getId2()}"></dd>
+            <dt>Country</dt><dd th:text="${city.getCountry()}"></dd>
+            <dt>Sunrise</dt><dd th:text="${city.getSunrise()}"></dd>
+            <dt>Sunset</dt><dd th:text="${city.getSunset()}"></dd>
+            <dt>Timezone</dt><dd th:text="${city.getTimezone()}"></dd>
+            <dt>Id</dt><dd th:text="${city.getId3()}"></dd>
+            <dt>Name</dt><dd th:text="${city.getName()}"></dd>
+            <dt>Cod</dt><dd th:text="${city.getCod()}"></dd>
+
+        </tr>
+
+    <a th:href="@{/}"> Back </a></span>
+</div>
+</main>
+<footer>
+    <section>
+        <div>
+            <div>
+                <a href="https://openweathermap.org/">
+                    <img th:width="150"
+                         src="https://openweathermap.org/themes/openweathermap/assets/img/logo_white_cropped.png">
+                </a>
+            </div>
+            <div>
+                <p>2020 © Copyright - Bart Schauer</p>
+            </div>
+            <div>
+                <a href="https://github.com/bart7801/homeworkweek5">
+                    <img th:width="120"
+                         src="https://www.theindianwire.com/wp-content/uploads/2019/05/maxresdefault-2.jpg"></a>
+                </a>
+            </div>
+        </div>
+    </section>
+</footer>
+</body>
+</html>
